@@ -1,0 +1,37 @@
+[package]
+name = "process-corral"
+version = "0.1.1"
+edition = "2024"
+default-run = "process-corral"
+license = "MIT"
+
+[lib]
+name = "process_corral"
+path = "src/lib.rs"
+
+[[bin]]
+name = "process-corral"
+path = "src/main.rs"
+
+# The GUI is opt-in: `cargo build --release` builds only the engine and never touches egui/eframe/tray-icon.
+[[bin]]
+name = "process-corral-gui"
+path = "src/gui/main.rs"
+required-features = ["gui"]
+
+[features]
+default = []
+gui = ["dep:eframe", "dep:tray-icon", "windows-sys/Win32_UI_Shell", "windows-sys/Win32_System_Registry", "windows-sys/Win32_UI_Controls_Dialogs", "windows-sys/Win32_System_LibraryLoader"]
+
+[dependencies]
+serde = { version = "1.0.229", features = ["derive"] }
+serde_json = "1.0.154"
+windows-sys = { version = "0.61.2", features = ["Win32_Foundation", "Win32_System_Threading", "Win32_System_Diagnostics_ToolHelp", "Win32_UI_WindowsAndMessaging", "Win32_Security", "Win32_System_ProcessStatus", "Win32_System_SystemInformation", "Win32_System_Services", "Win32_System_RemoteDesktop", "Win32_System_Console", "Win32_System_Diagnostics_Debug", "Win32_System_Power", "Win32_System_Registry"] }
+
+# GUI-only dependencies (optional: pulled in only with `--features gui`).
+eframe = { version = "0.37", optional = true, default-features = false, features = ["default_fonts", "wgpu"] }
+tray-icon = { version = "0.26", optional = true, default-features = false }
+
+# Build-time only: embeds the icon and version info into the exes. Not linked into either binary.
+[build-dependencies]
+winresource = "0.1"

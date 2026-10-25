@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  Process Corral icon (original artwork): a fence ring (the corral) with amber fence posts around a
+  CPU chip, on a deep-blue tile. This SVG is the full-detail design; generate.js renders every size
+  from the same geometry and drops detail that would turn to mush at small sizes (posts below 32 px,
+  chip die and pins below 48 px).
+-->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" width="256" height="256">
+  <title>Process Corral</title>
+  <rect x="8" y="8" width="240" height="240" rx="56" fill="#0E2F4A" stroke="#4686BA" stroke-width="7"/>
+  <!-- the corral: a ring of rail -->
+  <circle cx="128" cy="128" r="84" fill="none" stroke="#EAF2F8" stroke-width="26"/>
+  <!-- eight fence posts -->
+  <g fill="#FFB020">
+    <rect x="-15" y="-15" width="30" height="30" rx="5" transform="translate(128 128) rotate(22.5) translate(84 0) rotate(0)"/>
+    <rect x="-15" y="-15" width="30" height="30" rx="5" transform="translate(128 128) rotate(67.5) translate(84 0)"/>
+    <rect x="-15" y="-15" width="30" height="30" rx="5" transform="translate(128 128) rotate(112.5) translate(84 0)"/>
+    <rect x="-15" y="-15" width="30" height="30" rx="5" transform="translate(128 128) rotate(157.5) translate(84 0)"/>
+    <rect x="-15" y="-15" width="30" height="30" rx="5" transform="translate(128 128) rotate(202.5) translate(84 0)"/>
+    <rect x="-15" y="-15" width="30" height="30" rx="5" transform="translate(128 128) rotate(247.5) translate(84 0)"/>
+    <rect x="-15" y="-15" width="30" height="30" rx="5" transform="translate(128 128) rotate(292.5) translate(84 0)"/>
+    <rect x="-15" y="-15" width="30" height="30" rx="5" transform="translate(128 128) rotate(337.5) translate(84 0)"/>
+  </g>
+  <!-- the chip: pins, body, die -->
+  <g fill="#FFB020">
+    <rect x="99" y="48" width="14" height="160" rx="3"/>
+    <rect x="121" y="48" width="14" height="160" rx="3"/>
+    <rect x="143" y="48" width="14" height="160" rx="3"/>
+    <rect x="48" y="99" width="160" height="14" rx="3"/>
+    <rect x="48" y="121" width="160" height="14" rx="3"/>
+    <rect x="48" y="143" width="160" height="14" rx="3"/>
+    <rect x="88" y="88" width="80" height="80" rx="11"/>
+  </g>
+  <rect x="111" y="111" width="34" height="34" rx="4" fill="#0E2F4A"/>
+</svg>

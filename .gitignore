@@ -1,0 +1,9 @@
+﻿/target
+*.log
+*.ini.bak
+re-output/
+
+# Built artifacts: exes, installer, checksums. Never committed.
+/dist/
+/installer/Output/
+*.sha256
