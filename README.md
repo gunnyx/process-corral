@@ -64,8 +64,8 @@ Built files (`target/`, `dist/`, installers, checksums) are not stored in the re
 You need Windows 10 or later, a recent stable Rust toolchain (the package uses Rust edition 2024; it was built and tested with Rust 1.98.1), and the Visual Studio Build Tools with the Windows SDK, because the build embeds the icon with the SDK's `rc.exe`.
 
 ```powershell
-git clone <this repository>
-cd Process-Corral-v2
+git clone https://github.com/gunnyx/process-corral.git
+cd process-corral
 
 # Engine only (no GUI libraries are compiled)
 cargo build --release
