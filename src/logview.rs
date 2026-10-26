@@ -258,7 +258,7 @@ mod tests {
 
     const HEADER: &str = "\"UTC\",\"UTCText\",\"Machine\",\"User\",\"PID\",\"Basename\",\"ActionId\",\"Action\",\"Info\",\"Path\"\n";
     fn rec(n: u32, action: &str) -> String {
-        format!("\"1\",\"10-24-2026 22:46:{:02}\",\"M\",\"taco\",\"{n}\",\"p{n}.exe\",\"43\",\"{action}\",\"info, with \"\"quotes\"\"\",\"C:\\x\\p{n}.exe\"\n", n % 60)
+        format!("\"1\",\"10-24-2026 22:46:{:02}\",\"M\",\"alice\",\"{n}\",\"p{n}.exe\",\"43\",\"{action}\",\"info, with \"\"quotes\"\"\",\"C:\\x\\p{n}.exe\"\n", n % 60)
     }
 
     #[test]
@@ -384,7 +384,7 @@ mod tests {
         assert!(r.matches("restraint"));
         assert!(r.matches("p42.exe"));
         assert!(r.matches("42"));
-        assert!(r.matches("taco"));
+        assert!(r.matches("alice"));
         assert!(!r.matches("chrome"));
     }
 
